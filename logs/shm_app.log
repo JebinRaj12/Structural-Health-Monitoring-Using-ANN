@@ -1,0 +1,244 @@
+2026-06-26 20:30:03,619 [INFO] Initializing ANN training sequence...
+2026-06-26 20:30:03,620 [INFO] Starting training data preprocessing pipeline...
+2026-06-26 20:30:03,620 [INFO] Attempting to load file: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\building_health_monitoring_dataset.csv
+2026-06-26 20:30:03,658 [INFO] Successfully loaded file. Rows: 1000, Columns: 7
+2026-06-26 20:30:03,675 [INFO] Calculated and saved feature medians for training: {'Accel_X': np.float64(0.0797268146939592), 'Accel_Y': np.float64(0.01628937160566095), 'Accel_Z': np.float64(9.809974923517078), 'Strain': np.float64(109.01828732181046), 'Temperature': np.float64(25.05994365366145), 'Timestamp_numeric': np.float64(1745021.0)}
+2026-06-26 20:30:03,828 [INFO] Scaler successfully fit and saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\models\scaler.pkl
+2026-06-26 20:30:03,833 [INFO] Data split - Train: 800 samples, Test: 200 samples.
+2026-06-26 20:30:03,976 [WARNING] TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-06-26 20:30:03,993 [INFO] Model: "sequential"
++--------------------------------------------------------------------------+
+| Layer (type)                    | Output Shape           |       Param # |
+|---------------------------------+------------------------+---------------|
+| hidden_1 (Dense)                | (None, 64)             |           448 |
+|---------------------------------+------------------------+---------------|
+| dropout_1 (Dropout)             | (None, 64)             |             0 |
+|---------------------------------+------------------------+---------------|
+| hidden_2 (Dense)                | (None, 32)             |         2,080 |
+|---------------------------------+------------------------+---------------|
+| dropout_2 (Dropout)             | (None, 32)             |             0 |
+|---------------------------------+------------------------+---------------|
+| output (Dense)                  | (None, 3)              |            99 |
++--------------------------------------------------------------------------+
+ Total params: 2,627 (10.26 KB)
+ Trainable params: 2,627 (10.26 KB)
+ Non-trainable params: 0 (0.00 B)
+
+2026-06-26 20:30:03,993 [INFO] Starting model fitting...
+2026-06-26 20:30:07,431 [INFO] Evaluating trained model on held-out test data...
+2026-06-26 20:30:07,684 [INFO] Test Accuracy: 81.50%
+2026-06-26 20:30:07,684 [INFO] Weighted Precision: 0.7898
+2026-06-26 20:30:07,684 [INFO] Weighted Recall: 0.8150
+2026-06-26 20:30:07,684 [INFO] Weighted F1-Score: 0.7937
+2026-06-26 20:30:07,685 [INFO] Evaluation metrics saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\models\model_metrics.json
+2026-06-26 20:30:07,721 [INFO] Trained model saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\models\ann_model.keras
+2026-06-26 20:30:07,983 [INFO] Accuracy curve saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\reports\training_graphs\accuracy_curve.png
+2026-06-26 20:30:08,122 [INFO] Loss curve saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\reports\training_graphs\loss_curve.png
+2026-06-26 20:30:08,317 [INFO] Confusion matrix saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\reports\training_graphs\confusion_matrix.png
+2026-06-26 20:30:08,318 [INFO] ANN model training and saving completed successfully.
+2026-06-26 20:30:45,429 [INFO] Initializing ANN training sequence...
+2026-06-26 20:30:45,430 [INFO] Starting training data preprocessing pipeline...
+2026-06-26 20:30:45,430 [INFO] Attempting to load file: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\building_health_monitoring_dataset.csv
+2026-06-26 20:30:45,434 [INFO] Successfully loaded file. Rows: 1000, Columns: 7
+2026-06-26 20:30:45,442 [INFO] Calculated and saved feature medians for training: {'Accel_X': np.float64(0.0797268146939592), 'Accel_Y': np.float64(0.01628937160566095), 'Accel_Z': np.float64(9.809974923517078), 'Strain': np.float64(109.01828732181046), 'Temperature': np.float64(25.05994365366145), 'Timestamp_numeric': np.float64(1745021.0)}
+2026-06-26 20:30:45,464 [INFO] Scaler successfully fit and saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\models\scaler.pkl
+2026-06-26 20:30:45,467 [INFO] Data split - Train: 800 samples, Test: 200 samples.
+2026-06-26 20:30:45,526 [WARNING] TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-06-26 20:30:45,539 [INFO] Model: "sequential"
+┌─────────────────────────────────┬────────────────────────┬───────────────┐
+│ Layer (type)                    │ Output Shape           │       Param # │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ hidden_1 (Dense)                │ (None, 64)             │           448 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_1 (Dropout)             │ (None, 64)             │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ hidden_2 (Dense)                │ (None, 32)             │         2,080 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_2 (Dropout)             │ (None, 32)             │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ output (Dense)                  │ (None, 3)              │            99 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+ Total params: 2,627 (10.26 KB)
+ Trainable params: 2,627 (10.26 KB)
+ Non-trainable params: 0 (0.00 B)
+
+2026-06-26 20:30:45,539 [INFO] Starting model fitting...
+2026-06-26 20:30:49,499 [INFO] Evaluating trained model on held-out test data...
+2026-06-26 20:30:49,735 [INFO] Test Accuracy: 79.00%
+2026-06-26 20:30:49,735 [INFO] Weighted Precision: 0.7565
+2026-06-26 20:30:49,736 [INFO] Weighted Recall: 0.7900
+2026-06-26 20:30:49,736 [INFO] Weighted F1-Score: 0.7667
+2026-06-26 20:30:49,736 [INFO] Evaluation metrics saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\models\model_metrics.json
+2026-06-26 20:30:49,759 [INFO] Trained model saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\models\ann_model.keras
+2026-06-26 20:30:49,904 [INFO] Accuracy curve saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\reports\training_graphs\accuracy_curve.png
+2026-06-26 20:30:50,028 [INFO] Loss curve saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\reports\training_graphs\loss_curve.png
+2026-06-26 20:30:50,206 [INFO] Confusion matrix saved to: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\reports\training_graphs\confusion_matrix.png
+2026-06-26 20:30:50,206 [INFO] ANN model training and saving completed successfully.
+2026-06-26 20:31:13,333 [WARNING] TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-06-26 20:31:13,371 [INFO] Successfully loaded Keras model for prediction.
+2026-06-26 20:31:13,371 [INFO] Starting prediction data preprocessing pipeline for file: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\dataset\mock_sensor_batch.csv
+2026-06-26 20:31:13,371 [INFO] Attempting to load file: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\dataset\mock_sensor_batch.csv
+2026-06-26 20:31:13,382 [INFO] Successfully loaded file. Rows: 55, Columns: 6
+2026-06-26 20:31:13,403 [WARNING] Imputing 2 missing values in 'Accel_X' using training median: 0.0797268146939592
+2026-06-26 20:31:13,404 [WARNING] Imputing 2 missing values in 'Accel_Y' using training median: 0.01628937160566095
+2026-06-26 20:31:13,405 [WARNING] Imputing 1 missing values in 'Accel_Z' using training median: 9.809974923517078
+2026-06-26 20:31:13,405 [WARNING] Imputing 1 missing values in 'Strain' using training median: 109.01828732181046
+2026-06-26 20:31:13,405 [WARNING] Imputing 2 missing values in 'Temperature' using training median: 25.05994365366145
+2026-06-26 20:31:13,464 [INFO] Successfully preprocessed and scaled prediction data.
+2026-06-26 20:31:13,465 [INFO] Running inference on 55 records...
+2026-06-26 20:31:13,604 [INFO] Prediction Summary - Total: 55, H: 42 (76.4%), M: 7 (12.7%), S: 6 (10.9%)
+2026-06-26 20:31:13,605 [INFO] Overall Structural Health: Healthy (Avg Conf: 82.41%)
+2026-06-26 20:31:13,605 [INFO] Starting prediction data preprocessing pipeline for file: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\dataset\mock_sensor_batch.xlsx
+2026-06-26 20:31:13,605 [INFO] Attempting to load file: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\dataset\mock_sensor_batch.xlsx
+2026-06-26 20:31:13,624 [INFO] Successfully loaded file. Rows: 55, Columns: 6
+2026-06-26 20:31:13,627 [WARNING] Imputing 2 missing values in 'Accel_X' using training median: 0.0797268146939592
+2026-06-26 20:31:13,627 [WARNING] Imputing 2 missing values in 'Accel_Y' using training median: 0.01628937160566095
+2026-06-26 20:31:13,628 [WARNING] Imputing 1 missing values in 'Accel_Z' using training median: 9.809974923517078
+2026-06-26 20:31:13,628 [WARNING] Imputing 1 missing values in 'Strain' using training median: 109.01828732181046
+2026-06-26 20:31:13,628 [WARNING] Imputing 2 missing values in 'Temperature' using training median: 25.05994365366145
+2026-06-26 20:31:13,631 [INFO] Successfully preprocessed and scaled prediction data.
+2026-06-26 20:31:13,631 [INFO] Running inference on 55 records...
+2026-06-26 20:31:13,688 [INFO] Prediction Summary - Total: 55, H: 42 (76.4%), M: 7 (12.7%), S: 6 (10.9%)
+2026-06-26 20:31:13,688 [INFO] Overall Structural Health: Healthy (Avg Conf: 82.41%)
+2026-06-26 20:31:13,688 [INFO] Initializing PDF report generation...
+2026-06-26 20:31:13,770 [INFO] Temporary pie chart saved to: C:\Users\JEBINR~1\AppData\Local\Temp\tmpa5xjpev2.png
+2026-06-26 20:31:13,819 [INFO] PDF report successfully generated at: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\reports\SHM_Report_mock_sensor_batch_20260626_203113.pdf
+2026-06-26 20:31:13,820 [INFO] Temporary chart image cleaned up.
+2026-06-26 20:31:33,662 [WARNING] TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-06-26 20:31:33,700 [INFO] Successfully loaded Keras model for prediction.
+2026-06-26 20:32:12,243 [WARNING] TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-06-26 20:32:12,397 [INFO] Successfully loaded Keras model for prediction.
+2026-06-26 20:32:27,752 [WARNING] TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-06-26 20:32:27,787 [INFO] Successfully loaded Keras model for prediction.
+2026-06-26 20:32:27,847 [INFO] Loaded and displayed validation metrics in GUI.
+2026-06-26 20:51:35,332 [INFO] Initializing Structural Health Monitoring Application...
+2026-06-26 20:51:35,333 [INFO] Saved model, scaler, and metrics found. Bypassing training sequence.
+2026-06-26 20:51:35,333 [INFO] Launching CustomTkinter Graphical User Interface...
+2026-06-26 20:51:35,772 [WARNING] TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-06-26 20:51:35,807 [INFO] Successfully loaded Keras model for prediction.
+2026-06-26 20:51:35,844 [INFO] Loaded and displayed validation metrics in GUI.
+2026-06-26 20:54:43,789 [ERROR] Error pre-scanning file C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx: name 'pd' is not defined
+2026-06-26 20:55:45,162 [ERROR] Error pre-scanning file C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx: name 'pd' is not defined
+2026-06-26 20:56:00,151 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 20:56:01,404 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 21:07:40,413 [INFO] Application closed normally.
+2026-06-26 21:08:02,052 [INFO] Initializing Structural Health Monitoring Application...
+2026-06-26 21:08:02,052 [INFO] Saved model, scaler, and metrics found. Bypassing training sequence.
+2026-06-26 21:08:02,055 [INFO] Launching CustomTkinter Graphical User Interface...
+2026-06-26 21:08:02,488 [WARNING] TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-06-26 21:08:02,521 [INFO] Successfully loaded Keras model for prediction.
+2026-06-26 21:08:02,568 [INFO] Loaded and displayed validation metrics in GUI.
+2026-06-26 21:08:11,267 [INFO] Starting prediction data preprocessing pipeline for file: C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx
+2026-06-26 21:08:11,267 [INFO] Attempting to load file: C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx
+2026-06-26 21:08:11,270 [INFO] Successfully loaded file. Rows: 59, Columns: 7
+2026-06-26 21:08:11,278 [ERROR] Missing columns: ['Strain', 'Temperature']. Available columns: ['Timestamp', 'Accel_X', 'Accel_Y', 'Accel_Z', 'Strain (Î¼Îµ)', 'Temp (Â°C)', 'Condition Label']
+2026-06-26 21:08:11,279 [ERROR] Prediction failed: 'Missing required columns in dataset: Strain, Temperature'
+Traceback (most recent call last):
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\ui\main_window.py", line 446, in _execute_prediction_thread
+    results = self.predictor.predict(self.selected_file_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\predict.py", line 43, in predict
+    X_scaled, df_cleaned = preprocess_prediction_data(file_path)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\utils\data_preprocessing.py", line 197, in preprocess_prediction_data
+    df_aligned = align_columns(df, is_training=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\utils\data_preprocessing.py", line 81, in align_columns
+    raise KeyError(f"Missing required columns in dataset: {', '.join(missing_cols)}")
+KeyError: 'Missing required columns in dataset: Strain, Temperature'
+2026-06-26 21:08:17,557 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 21:08:20,038 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 21:08:28,409 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 21:08:30,777 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 21:08:30,939 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 21:08:31,249 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 21:08:31,398 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 21:08:31,540 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 21:08:31,743 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 21:08:37,135 [INFO] Application closed normally.
+2026-06-26 21:08:45,237 [INFO] Initializing Structural Health Monitoring Application...
+2026-06-26 21:08:45,240 [INFO] Saved model, scaler, and metrics found. Bypassing training sequence.
+2026-06-26 21:08:45,240 [INFO] Launching CustomTkinter Graphical User Interface...
+2026-06-26 21:08:45,646 [WARNING] TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-06-26 21:08:45,679 [INFO] Successfully loaded Keras model for prediction.
+2026-06-26 21:08:45,728 [INFO] Loaded and displayed validation metrics in GUI.
+2026-06-26 21:09:04,369 [INFO] Starting prediction data preprocessing pipeline for file: C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx
+2026-06-26 21:09:04,369 [INFO] Attempting to load file: C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx
+2026-06-26 21:09:04,378 [INFO] Successfully loaded file. Rows: 59, Columns: 7
+2026-06-26 21:09:04,380 [ERROR] Missing columns: ['Strain', 'Temperature']. Available columns: ['Timestamp', 'Accel_X', 'Accel_Y', 'Accel_Z', 'Strain (Î¼Îµ)', 'Temp (Â°C)', 'Condition Label']
+2026-06-26 21:09:04,380 [ERROR] Prediction failed: 'Missing required columns in dataset: Strain, Temperature'
+Traceback (most recent call last):
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\ui\main_window.py", line 446, in _execute_prediction_thread
+    results = self.predictor.predict(self.selected_file_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\predict.py", line 43, in predict
+    X_scaled, df_cleaned = preprocess_prediction_data(file_path)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\utils\data_preprocessing.py", line 197, in preprocess_prediction_data
+    df_aligned = align_columns(df, is_training=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\utils\data_preprocessing.py", line 81, in align_columns
+    raise KeyError(f"Missing required columns in dataset: {', '.join(missing_cols)}")
+KeyError: 'Missing required columns in dataset: Strain, Temperature'
+2026-06-26 21:14:41,308 [INFO] Application closed normally.
+2026-06-26 21:15:08,112 [INFO] Initializing Structural Health Monitoring Application...
+2026-06-26 21:15:08,112 [INFO] Saved model, scaler, and metrics found. Bypassing training sequence.
+2026-06-26 21:15:08,112 [INFO] Launching CustomTkinter Graphical User Interface...
+2026-06-26 21:15:08,512 [WARNING] TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-06-26 21:15:08,554 [INFO] Successfully loaded Keras model for prediction.
+2026-06-26 21:15:08,589 [INFO] Loaded and displayed validation metrics in GUI.
+2026-06-26 21:15:16,699 [INFO] Starting prediction data preprocessing pipeline for file: C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx
+2026-06-26 21:15:16,699 [INFO] Attempting to load file: C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx
+2026-06-26 21:15:16,704 [INFO] Successfully loaded file. Rows: 59, Columns: 7
+2026-06-26 21:15:16,710 [ERROR] Missing columns: ['Strain', 'Temperature']. Available columns: ['Timestamp', 'Accel_X', 'Accel_Y', 'Accel_Z', 'Strain (Î¼Îµ)', 'Temp (Â°C)', 'Condition Label']
+2026-06-26 21:15:16,710 [ERROR] Prediction failed: 'Missing required columns in dataset: Strain, Temperature'
+Traceback (most recent call last):
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\ui\main_window.py", line 446, in _execute_prediction_thread
+    results = self.predictor.predict(self.selected_file_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\predict.py", line 43, in predict
+    X_scaled, df_cleaned = preprocess_prediction_data(file_path)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\utils\data_preprocessing.py", line 197, in preprocess_prediction_data
+    df_aligned = align_columns(df, is_training=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\utils\data_preprocessing.py", line 81, in align_columns
+    raise KeyError(f"Missing required columns in dataset: {', '.join(missing_cols)}")
+KeyError: 'Missing required columns in dataset: Strain, Temperature'
+2026-06-26 21:15:18,435 [INFO] Application closed normally.
+2026-06-26 21:23:02,396 [INFO] Initializing Structural Health Monitoring Application...
+2026-06-26 21:23:02,401 [INFO] Saved model, scaler, and metrics found. Bypassing training sequence.
+2026-06-26 21:23:02,401 [INFO] Launching CustomTkinter Graphical User Interface...
+2026-06-26 21:23:02,818 [WARNING] TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-06-26 21:23:02,852 [INFO] Successfully loaded Keras model for prediction.
+2026-06-26 21:23:02,901 [INFO] Loaded and displayed validation metrics in GUI.
+2026-06-26 21:23:10,204 [INFO] Starting prediction data preprocessing pipeline for file: C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx
+2026-06-26 21:23:10,204 [INFO] Attempting to load file: C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx
+2026-06-26 21:23:10,204 [INFO] Successfully loaded file. Rows: 59, Columns: 7
+2026-06-26 21:23:10,226 [WARNING] Imputing 1 missing values in 'Accel_X' using training median: 0.0797268146939592
+2026-06-26 21:23:10,226 [WARNING] Imputing 1 missing values in 'Strain' using training median: 109.01828732181046
+2026-06-26 21:23:10,226 [WARNING] Imputing 1 missing values in 'Temperature' using training median: 25.05994365366145
+2026-06-26 21:23:10,258 [INFO] Successfully preprocessed and scaled prediction data.
+2026-06-26 21:23:10,258 [INFO] Running inference on 59 records...
+2026-06-26 21:23:10,436 [INFO] Prediction Summary - Total: 59, H: 45 (76.3%), M: 5 (8.5%), S: 9 (15.3%)
+2026-06-26 21:23:10,436 [INFO] Overall Structural Health: Healthy (Avg Conf: 84.29%)
+2026-06-26 21:23:10,499 [INFO] Initializing PDF report generation...
+2026-06-26 21:23:10,568 [INFO] Temporary pie chart saved to: C:\Users\JEBINR~1\AppData\Local\Temp\tmpqcx1qcbh.png
+2026-06-26 21:23:10,616 [INFO] PDF report successfully generated at: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\reports\SHM_Report_Sensor_data_for_SHM_20260626_212310.pdf
+2026-06-26 21:23:10,617 [INFO] Temporary chart image cleaned up.
+2026-06-26 21:24:20,018 [INFO] Cleared GUI dashboard metrics.
+2026-06-26 21:25:44,144 [INFO] Starting prediction data preprocessing pipeline for file: C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx
+2026-06-26 21:25:44,144 [INFO] Attempting to load file: C:/Users/Jebin Raj/OneDrive/文档/professional/research work/SHM using ANN/Sensor data for SHM.xlsx
+2026-06-26 21:25:44,153 [INFO] Successfully loaded file. Rows: 59, Columns: 7
+2026-06-26 21:25:44,160 [WARNING] Imputing 1 missing values in 'Accel_X' using training median: 0.0797268146939592
+2026-06-26 21:25:44,160 [WARNING] Imputing 1 missing values in 'Strain' using training median: 109.01828732181046
+2026-06-26 21:25:44,160 [WARNING] Imputing 1 missing values in 'Temperature' using training median: 25.05994365366145
+2026-06-26 21:25:44,164 [INFO] Successfully preprocessed and scaled prediction data.
+2026-06-26 21:25:44,164 [INFO] Running inference on 59 records...
+2026-06-26 21:25:44,240 [INFO] Prediction Summary - Total: 59, H: 45 (76.3%), M: 5 (8.5%), S: 9 (15.3%)
+2026-06-26 21:25:44,240 [INFO] Overall Structural Health: Healthy (Avg Conf: 84.29%)
+2026-06-26 21:25:44,284 [INFO] Initializing PDF report generation...
+2026-06-26 21:25:44,335 [INFO] Temporary pie chart saved to: C:\Users\JEBINR~1\AppData\Local\Temp\tmp0htp_ow9.png
+2026-06-26 21:25:44,379 [INFO] PDF report successfully generated at: C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model\reports\SHM_Report_Sensor_data_for_SHM_20260626_212544.pdf
+2026-06-26 21:25:44,379 [INFO] Temporary chart image cleaned up.
+2026-06-26 21:29:53,894 [INFO] Application closed normally.
