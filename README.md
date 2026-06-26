@@ -1,112 +1,232 @@
-# Structural Health Monitoring (SHM) using Artificial Neural Network (ANN)
+# Structural Health Monitoring Using Artificial Neural Network (ANN)
 
-A professional desktop application developed in Python to evaluate the structural health condition of buildings using sensor telemetry data (accelerometer axes, strain, and temperature) and a Feedforward Artificial Neural Network (MLP) built with TensorFlow/Keras.
+## Overview
+
+Structural Health Monitoring (SHM) is an intelligent system used to assess the condition of civil structures using sensor measurements. This project presents a desktop application that utilizes an Artificial Neural Network (ANN) to classify the structural health condition based on sensor data.
+
+The application accepts Excel or CSV sensor files, preprocesses the data automatically, predicts the structural condition using a trained ANN model, visualizes the prediction results, and generates a professional PDF report.
+
+---
+
+## Dashboard Preview
+
+> Save the screenshot below inside the **assets** folder as:
+
+```text
+assets/dashboard.png
+```
+
+Then the image will automatically appear here.
+
+![Structural Health Monitoring Dashboard](assets/dashboard.png)
+
+---
+
+## Features
+
+* Upload CSV and Excel (.csv, .xls, .xlsx) files
+* Automatic data preprocessing
+* Missing value handling
+* Artificial Neural Network (ANN) prediction
+* Structural health classification
+* Prediction confidence score
+* Damage distribution analysis
+* Engineering recommendation generation
+* Pie chart visualization
+* Automatic PDF report generation
+* User-friendly desktop interface using CustomTkinter
+
+---
+
+## Technologies Used
+
+* Python 3.12
+* TensorFlow / Keras
+* Artificial Neural Network (ANN)
+* Pandas
+* NumPy
+* Scikit-learn
+* Matplotlib
+* CustomTkinter
+* ReportLab
+* OpenPyXL
 
 ---
 
 ## Project Structure
 
-The project directory is structured as follows:
-
 ```text
-ML model/
+Structural-Health-Monitoring-Using-ANN
 │
-├── config.py                 # Application configurations, paths, hyper-parameters, and GUI themes
-├── main.py                   # Application entry point with automated model check and GUI bootstrapper
-├── train_model.py            # Neural network architecture definition, training loop, and graphing utility
-├── predict.py                # Wrapper module to run inference on files and calculate health classification stats
-├── requirements.txt          # Python dependency specifications
-├── README.md                 # Complete documentation and user instruction manual
+├── assets/
+├── dataset/
+├── models/
+│   ├── ann_model.keras
+│   ├── scaler.pkl
+│   ├── medians.pkl
+│   └── model_metrics.json
 │
-├── dataset/                  # Folder for auxiliary dataset resources
-├── models/                   # Saved artifacts (ann_model.keras, scaler.pkl, medians.pkl, model_metrics.json)
-├── ui/                       # CustomTkinter GUI panel layouts
-│   └── main_window.py        # Principal GUI dashboard frame and handlers
+├── ui/
+│   └── main_window.py
 │
-├── utils/                    # Preprocessing pipelines and report utilities
-│   ├── data_preprocessing.py # Duplicates removal, column validation, median imputation, and timestamp scaling
-│   └── pdf_generator.py      # Automates reportlab PDF compilation and matplotlib distribution embedding
+├── utils/
+│   ├── data_preprocessing.py
+│   └── pdf_generator.py
 │
-├── reports/                  # Generated structural analysis PDF reports
-│   └── training_graphs/      # Neural Network curves (accuracy, loss, confusion matrix)
-│
-├── assets/                   # Images and static layout components
-└── logs/                     # Application logging logs (shm_app.log)
+├── config.py
+├── main.py
+├── predict.py
+├── train_model.py
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-## Data Features
+## Artificial Neural Network Architecture
 
-The models ingest 6 input features to determine the structural condition:
-1. **Timestamp**: Represented as numeric Unix seconds epoch (standardized with `StandardScaler`).
-2. **Accel_X**: Acceleration along the X-axis (m/s²).
-3. **Accel_Y**: Acceleration along the Y-axis (m/s²).
-4. **Accel_Z**: Acceleration along the Z-axis (m/s²).
-5. **Strain**: Strain telemetry readings (με).
-6. **Temperature**: Environmental temperature (°C).
+* Input Layer
 
-### Class Labels
-- `0` = **Healthy**
-- `1` = **Minor Damage**
-- `2` = **Severe Damage**
+  * Timestamp
+  * Acceleration X
+  * Acceleration Y
+  * Acceleration Z
+  * Strain
+  * Temperature
 
----
+↓
 
-## Neural Network (MLP) Specifications
+* Hidden Layer 1
 
-- **Framework**: TensorFlow 2.x + Keras
-- **Architecture**:
-  - **Input Layer**: 6 features
-  - **Hidden Layer 1**: 64 Neurons, ReLU activation, Dropout 0.20
-  - **Hidden Layer 2**: 32 Neurons, ReLU activation, Dropout 0.20
-  - **Output Layer**: 3 Neurons, Softmax activation
-- **Compiler**:
-  - **Optimizer**: Adam (Learning Rate = 0.001)
-  - **Loss**: Sparse Categorical Crossentropy
-- **Parameters**:
-  - Epochs: 100
-  - Batch Size: 32
-  - Validation Split: 20%
-  - EarlyStopping: Monitor `val_loss`, patience = 10, restore best weights
+  * 64 Neurons
+  * ReLU Activation
+  * Dropout (20%)
 
----
+↓
 
-## Preprocessing Pipeline
+* Hidden Layer 2
 
-- **Column Alignment**: Automatically matches column headers using fuzzy matching rules (e.g. mapping `Temp (°C)` to standard `Temperature` feature).
-- **Duplicate & NaN Handling**: Removes identical rows. Imputes missing numeric parameters using training medians (stored in `medians.pkl`).
-- **Feature Scaling**: Computes Z-score normalization utilizing `StandardScaler`. Scaler parameters are saved to `models/scaler.pkl` and loaded on prediction. No new scaling configuration is generated during prediction.
+  * 32 Neurons
+  * ReLU Activation
+  * Dropout (20%)
+
+↓
+
+* Output Layer
+
+  * Healthy
+  * Minor Damage
+  * Severe Damage
 
 ---
 
-## Installation & Setup
+## Workflow
 
-1. Open your terminal in VS Code and verify you are running Python 3.8 to 3.11.
-2. Navigate to the project root directory:
-   ```powershell
-   cd "C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\ML model"
-   ```
-3. Install required libraries:
-   ```powershell
-   pip install -r requirements.txt
-   ```
+1. Upload a CSV or Excel file.
+2. Validate the input data.
+3. Preprocess the dataset.
+4. Scale the input features.
+5. Load the trained ANN model.
+6. Predict the structural condition.
+7. Display prediction confidence.
+8. Generate engineering recommendations.
+9. Visualize the damage distribution.
+10. Export the analysis as a PDF report.
 
 ---
 
-## How to Run
+## Model Performance
 
-Launch the application using:
-```powershell
+| Metric    | Value  |
+| --------- | ------ |
+| Accuracy  | 79.00% |
+| Precision | 0.7565 |
+| Recall    | 0.7900 |
+| F1-Score  | 0.7667 |
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/JebinRaj12/Structural-Health-Monitoring-Using-ANN.git
+```
+
+Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application:
+
+```bash
 python main.py
 ```
 
-### Dynamic Prediction Workflow
-1. If launched for the first time, the application detects that the model is missing and automatically initiates the ANN training sequence using the training dataset located at the parent directory (`C:\Users\Jebin Raj\OneDrive\文档\professional\research work\SHM using ANN\building_health_monitoring_dataset.csv`).
-2. Performance curves and the confusion matrix are saved to `reports/training_graphs/`.
-3. Validation metrics (Accuracy, Precision, Recall, F1) are generated and stored in `models/model_metrics.json`.
-4. Once training concludes, the CustomTkinter GUI dashboard launches, displaying validation performance.
-5. In subsequent executions, the application loads the trained files instantly without repeating the training sequence.
-6. Click **Browse CSV / Excel File** to load a test file.
-7. Click **Analyze Structure** to run classification.
-8. The overall structural health is calculated using a **majority-voting logic** of all prediction rows. The dashboard visualizes counts, percentage distributions, and automatically exports a detailed PDF report containing a pie chart of the distribution to the `reports/` folder.
+---
+
+## Input Dataset
+
+Supported formats:
+
+* CSV
+* XLS
+* XLSX
+
+Required input features:
+
+* Timestamp
+* Accel_X
+* Accel_Y
+* Accel_Z
+* Strain
+* Temperature
+
+---
+
+## Output
+
+The application provides:
+
+* Overall Structural Health Status
+* Prediction Confidence
+* Healthy Sample Count
+* Minor Damage Count
+* Severe Damage Count
+* Engineering Recommendation
+* Damage Distribution Chart
+* PDF Report
+
+---
+
+## Future Improvements
+
+* CNN and LSTM model comparison
+* Real-time IoT sensor integration
+* Cloud database support
+* Live dashboard
+* Mobile application
+* Structural anomaly detection
+* Multi-model ensemble prediction
+
+---
+
+## Author
+
+**Jebin Raj J**
+
+Bachelor of Engineering (Civil Engineering)
+
+Machine Learning | Artificial Intelligence | Structural Health Monitoring | Civil Engineering
+
+GitHub:
+https://github.com/JebinRaj12
+
+---
+
+## License
+
+This project is developed for academic and educational purposes.
